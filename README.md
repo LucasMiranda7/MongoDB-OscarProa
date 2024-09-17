@@ -7,7 +7,12 @@
 < 3
 ```
 
-2- Quantos Oscars Natalie Portman ganhou?
+2- Quantos Oscars Natalie Portman ganhou? <br>
+
+```
+> db.oscar.countDocuments({entity: /Natalie Portman/, winner: true})
+< 1
+```
 
 3- Amy Adams já ganhou algum Oscar?
 
