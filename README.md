@@ -2,6 +2,12 @@
 
 1- Quantas vezes Natalie Portman foi indicada ao Oscar?
 
+'''
+> db.oscar.countDocuments({entity: /Natalie Portman/})
+> 3
+
+'''
+
 2- Quantos Oscars Natalie Portman ganhou?
 
 3- Amy Adams já ganhou algum Oscar?
