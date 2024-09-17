@@ -1,12 +1,11 @@
 # Atividades para trabalhar com o Oscar
 
-1- Quantas vezes Natalie Portman foi indicada ao Oscar?
+1- Quantas vezes Natalie Portman foi indicada ao Oscar? <br>
 
-'''
+```
 > db.oscar.countDocuments({entity: /Natalie Portman/})
-> 3
-
-'''
+< 3
+```
 
 2- Quantos Oscars Natalie Portman ganhou?
 
