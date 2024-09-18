@@ -22,7 +22,7 @@ Não ganhou oscar.
 ```
 
 4- A série de filmes Toy Story ganhou um Oscar em quais anos? <br>
-Ganhou Oscar entre 1995 a 2010.
+Ganhou Oscar entre 2011 a 2020.
 ```
 > db.oscar.find({nome_do_filme: /Toy Story/i, vencedor: 1}, {nome_do_filme: 1, ano_cerimonia: 1, _id: 0})
 < {
