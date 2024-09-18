@@ -95,14 +95,128 @@ A 78.ª edição do Oscar
 
 ```
 
-9- Bom... dê um Oscar para um filme que merece muito, mas não ganhou.
+9- Bom... dê um Oscar para um filme que merece muito, mas não ganhou. <br>
+Toy Story 3.
+
+```
+> db.oscar.updateMany({nome_do_filme: /Toy Story 3/i, vencedor: 0}, {$set:{vencedor: 1}})
+< {
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+
+> db.oscar.find({nome_do_filme: /Toy Story 3/i})
+{
+  _id: ObjectId('66ead38c6c024a36e96bfa15'),
+  id_registro: 9165,
+  ano_filmagem: 2010,
+  ano_cerimonia: 2011,
+  cerimonia: 83,
+  categoria: 'ANIMATED FEATURE FILM',
+  nome_do_indicado: 'Lee Unkrich',
+  nome_do_filme: 'Toy Story 3',
+  vencedor: 1
+}
+
+```
 
 10- O filme Central do Brasil aparece no Oscar? <br>
 Não
+
 ```
 > db.oscar.find({nome_do_filme: /Central do Brasil/i, vencedor: 1})
 < 
 ```
-11- Inclua no banco 3 filmes que nunca foram nem nomeados ao Oscar, mas que merecem ser. 
 
-14 - Pensando no ano em que você nasceu: Qual foi o Oscar de melhor filme, Melhor Atriz e Melhor Diretor?
+11- Inclua no banco 3 filmes que nunca foram nem nomeados ao Oscar, mas que merecem ser. <br>
+
+```
+> db.oscar.insertMany([
+    {
+      "id_registro": 10890,
+          "ano_filmagem": 2022,
+          "ano_cerimonia": "NULL",
+          "cerimonia": "NULL",
+          "categoria": "NULL",
+          "nome_do_indicado": "NULL",
+          "nome_do_filme": "Suzume",
+          "vencedor": 0
+    },
+  {
+    "id_registro": 10891,
+        "ano_filmagem": 2007,
+        "ano_cerimonia": 2008,
+        "cerimonia": "NULL",
+        "categoria": "Best Actor",
+        "nome_do_indicado": "Heath Ledger was nominated for Best Supporting Actor.",
+        "nome_do_filme": "O Cavaleiro das Trevas",
+        "vencedor": 0
+  },
+
+  {
+    "id_registro": 10892,
+        "ano_filmagem": 2009,
+        "ano_cerimonia": 2011,
+        "categoria": "",
+        "nome_do_indicado": "",
+        "nome_do_filme": "Lanterna Verde",
+        "vencedor": 0
+  }
+])
+
+< {
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66eb20525f40023bfdb9bc16'),
+    '1': ObjectId('66eb20525f40023bfdb9bc17'),
+    '2': ObjectId('66eb20525f40023bfdb9bc18')
+  }
+}
+
+```
+
+12 - Pensando no ano em que você nasceu: Qual foi o Oscar de melhor filme, Melhor Atriz e Melhor Diretor? <br>
+
+```
+> db.oscar.find({ano_filmagem: 2005, categoria: /ACTRESS/i, vencedor: 1})
+< {
+  _id: ObjectId('66ead38c6c024a36e96bf7cd'),
+  id_registro: 8581,
+  ano_filmagem: 2005,
+  ano_cerimonia: 2006,
+  cerimonia: 78,
+  categoria: 'ACTRESS IN A LEADING ROLE',
+  nome_do_indicado: 'Reese Witherspoon',
+  nome_do_filme: 'Walk the Line',
+  vencedor: 1
+}
+
+> db.oscar.find({ano_filmagem: 2005, categoria: /ACTOR/, vencedor: 1})
+< {
+  _id: ObjectId('66ead38c6c024a36e96bf7c4'),
+  id_registro: 8572,
+  ano_filmagem: 2005,
+  ano_cerimonia: 2006,
+  cerimonia: 78,
+  categoria: 'ACTOR IN A SUPPORTING ROLE',
+  nome_do_indicado: 'George Clooney',
+  nome_do_filme: 'Syriana',
+  vencedor: 1
+}
+
+> db.oscar.find({ano_filmagem: 2005, categoria: /ACTOR/i, vencedor: 1})
+< {
+  _id: ObjectId('66ead38c6c024a36e96bf7bf'),
+  id_registro: 8567,
+  ano_filmagem: 2005,
+  ano_cerimonia: 2006,
+  cerimonia: 78,
+  categoria: 'ACTOR IN A LEADING ROLE',
+  nome_do_indicado: 'Philip Seymour Hoffman',
+  nome_do_filme: 'Capote',
+  vencedor: 1
+}
+```
