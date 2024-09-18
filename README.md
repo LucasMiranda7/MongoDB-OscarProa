@@ -50,8 +50,11 @@ Ganhou Oscar entre 1995 a 2010.
 
 5- A partir de que ano que a categoria "Actress" deixa de existir? <br>
 A partir do ano 1976.
+
 ```
-db.oscar.find({"category": "ACTRESS"}).sort({year: -1})
+db.oscar.find(
+  { "category": "ACTRESS" }
+).sort({ year: -1 }).limit(1)
 {
   _id: ObjectId('66ea151c7099b8c447d21a36'),
   category: 'ACTRESS',
@@ -59,38 +62,17 @@ db.oscar.find({"category": "ACTRESS"}).sort({year: -1})
   winner: false,
   year: 1975
 }
+
+
+db.oscar.find({"year": 1976}).sort({year: 1}).limit(1)
 {
-  _id: ObjectId('66ea151c7099b8c447d21a37'),
-  category: 'ACTRESS',
-  entity: 'Ann-Margret',
+  _id: ObjectId('66ea151c7099b8c447d21aa0'),
+  category: 'ACTOR IN A LEADING ROLE',
+  entity: 'Robert De Niro',
   winner: false,
-  year: 1975
-}
-{
-  _id: ObjectId('66ea151c7099b8c447d21a38'),
-  category: 'ACTRESS',
-  entity: 'Louise Fletcher',
-  winner: true,
-  year: 1975
-}
-{
-  _id: ObjectId('66ea151c7099b8c447d21a39'),
-  category: 'ACTRESS',
-  entity: 'Glenda Jackson',
-  winner: false,
-  year: 1975
+  year: 1976
 }
 
-  _id: ObjectId('66ea151c7099b8c447d21a3a'),
-  category: 'ACTRESS',
-  entity: 'Carol Kane',
-  winner: false,
-  year: 1975
-}
-continua.... 1974 e etc
-
-db.oscar.find({"category": "ACTRESS", year: 1976})
-< 
 ```
 
 
