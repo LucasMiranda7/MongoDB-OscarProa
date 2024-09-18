@@ -121,14 +121,14 @@ A 78.ª edição do Oscar
   year: 2005
 }
 
-< {
+ {
   _id: ObjectId('66ea151c7099b8c447d22913'),
   category: 'BEST PICTURE',
   entity: 'Crash',
   winner: 1,
   year: 2005
 }
-< {
+ {
   _id: ObjectId('66ea151c7099b8c447d22930'),
   category: 'WRITING (Original Screenplay)',
   entity: 'Crash',
