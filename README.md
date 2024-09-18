@@ -115,8 +115,12 @@ A 78.ª edição do Oscar
 
 9- Bom... dê um Oscar para um filme que merece muito, mas não ganhou.
 
-10- O filme Central do Brasil aparece no Oscar?
-
+10- O filme Central do Brasil aparece no Oscar? <br>
+Não
+```
+> db.oscar.find({nome_do_filme: /Central do Brasil/i, vencedor: 1})
+< 
+```
 11- Inclua no banco 3 filmes que nunca foram nem nomeados ao Oscar, mas que merecem ser. 
 
 14 - Pensando no ano em que você nasceu: Qual foi o Oscar de melhor filme, Melhor Atriz e Melhor Diretor?
