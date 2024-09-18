@@ -1,22 +1,52 @@
 # Atividades para trabalhar com o Oscar
 
 1- Quantas vezes Natalie Portman foi indicada ao Oscar? <br>
-
+Foi indicada 3x.
 ```
 > db.oscar.countDocuments({entity: /Natalie Portman/})
 < 3
 ```
 
 2- Quantos Oscars Natalie Portman ganhou? <br>
-
+Ganhou 1 oscar.
 ```
 > db.oscar.countDocuments({entity: /Natalie Portman/, winner: true})
 < 1
 ```
 
-3- Amy Adams já ganhou algum Oscar?
+3- Amy Adams já ganhou algum Oscar? <br>
+Não ganhou oscar.
+```
+> db.oscar.countDocuments({entity: /Amy Adams/, winner: true})
+< 0
+```
 
-4- A série de filmes Toy Story ganhou um Oscar em quais anos?
+4- A série de filmes Toy Story ganhou um Oscar em quais anos? <br>
+Ganhou Oscar entre 1995 a 2010.
+```
+> db.oscar.find({entity: /Toy Story/, winner: true})
+< {
+  _id: ObjectId('66ea151c7099b8c447d22409'),
+  category: 'SPECIAL ACHIEVEMENT AWARD',
+  entity: 'To John Lasseter, for his inspired leadership of the Pixar Toy Story team, resulting in the first feature-length computer-animated film.',
+  winner: true,
+  year: 1995
+}
+{
+  _id: ObjectId('66ea151c7099b8c447d22b62'),
+  category: 'ANIMATED FEATURE FILM',
+  entity: 'Toy Story 3',
+  winner: true,
+  year: 2010
+}
+{
+  _id: ObjectId('66ea151c7099b8c447d22b96'),
+  category: 'MUSIC (Original Song)',
+  entity: 'Toy Story 3',
+  winner: true,
+  year: 2010
+}
+```
 
 5- A partir de que ano que a categoria "Actress" deixa de existir? 
 
