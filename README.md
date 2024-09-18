@@ -40,10 +40,11 @@ Ganhou Oscar entre 2011 a 2020.
 ```
 
 5- A partir de que ano que a categoria "Actress" deixa de existir? <br>
-A partir do ano 1976.
+A partir do ano 1931.
 
 ```
-
+db.oscar.find({"categoria": /ACTRESS/i}, {categoria:1, ano_filmagem: 1, ano_cerimonia: 1})
+> 1931
 
 ```
 
