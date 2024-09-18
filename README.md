@@ -24,39 +24,18 @@ Não ganhou oscar.
 4- A série de filmes Toy Story ganhou um Oscar em quais anos? <br>
 Ganhou Oscar entre 1995 a 2010.
 ```
-> db.oscar.find({nome_do_filme: /Toy Story/, vencedor: "true"})
+> db.oscar.find({nome_do_filme: /Toy Story/i, vencedor: 1}, {nome_do_filme: 1, ano_cerimonia: 1, _id: 0})
 < {
-  _id: ObjectId('66ead38c6c024a36e96bfa15'),
-  id_registro: 9165,
-  ano_filmagem: 2010,
   ano_cerimonia: 2011,
-  cerimonia: 83,
-  categoria: 'ANIMATED FEATURE FILM',
-  nome_do_indicado: 'Lee Unkrich',
-  nome_do_filme: 'Toy Story 3',
-  vencedor: 'true'
+  nome_do_filme: 'Toy Story 3'
 }
 {
-  _id: ObjectId('66ead38c6c024a36e96bfa49'),
-  id_registro: 9217,
-  ano_filmagem: 2010,
   ano_cerimonia: 2011,
-  cerimonia: 83,
-  categoria: 'MUSIC (Original Song)',
-  nome_do_indicado: 'Music and Lyric by Randy Newman',
-  nome_do_filme: 'Toy Story 3',
-  vencedor: 'true'
+  nome_do_filme: 'Toy Story 3'
 }
 {
-  _id: ObjectId('66ead38c6c024a36e96bfe7c'),
-  id_registro: 10292,
-  ano_filmagem: 2019,
   ano_cerimonia: 2020,
-  cerimonia: 92,
-  categoria: 'ANIMATED FEATURE FILM',
-  nome_do_indicado: 'Josh Cooley, Mark Nielsen and Jonas Rivera',
-  nome_do_filme: 'Toy Story 4',
-  vencedor: 'true'
+  nome_do_filme: 'Toy Story 4'
 }
 ```
 
