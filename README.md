@@ -43,26 +43,7 @@ Ganhou Oscar entre 2011 a 2020.
 A partir do ano 1976.
 
 ```
-> db.oscar.find(
-< { "category": "ACTRESS" }
-).sort({ year: -1 }).limit(1)
-{
-  _id: ObjectId('66ea151c7099b8c447d21a36'),
-  category: 'ACTRESS',
-  entity: 'Isabelle Adjani',
-  winner: false,
-  year: 1975
-}
 
-
-> db.oscar.find({"year": 1976}).sort({year: 1}).limit(1)
-< {
-  _id: ObjectId('66ea151c7099b8c447d21aa0'),
-  category: 'ACTOR IN A LEADING ROLE',
-  entity: 'Robert De Niro',
-  winner: false,
-  year: 1976
-}
 
 ```
 
