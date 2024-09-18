@@ -125,8 +125,12 @@ Foi para Janet Gaynor. Ano de 1927
 A 78.ª edição do Oscar
 
 ```
-> 
-< 
+> db.oscar.find({nome_do_filme: "Crash"}, {nome_do_filme: 1, ano_cerimonia: 1, cerimonia: 1, _id:0}).sort({cerimonia: 1}).limit(1)
+< {
+  ano_cerimonia: 2006,
+  cerimonia: 78,
+  nome_do_filme: 'Crash'
+}
 
 ```
 
