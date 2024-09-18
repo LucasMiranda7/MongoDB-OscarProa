@@ -76,7 +76,7 @@ db.oscar.find({"year": 1976}).sort({year: 1}).limit(1)
 ```
 
 
-6- O primeiro Oscar para melhor Atriz foi para quem? Em que ano?
+6- O primeiro Oscar para melhor Atriz foi para quem? Em que ano? <br>
 Foi para Janet Gaynor. Ano de 1927
 ```
 db.oscar.find({winner: true, category: "ACTRESS"}, {year: 1, entity: 1, _id: 0}).sort({year: 1}).limit(1)
