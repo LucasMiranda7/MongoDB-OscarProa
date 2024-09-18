@@ -86,7 +86,27 @@ db.oscar.find({winner: true, category: "ACTRESS"}, {year: 1, entity: 1, _id: 0})
 }
 ```
 
-7- Na campo "Vencedor", altere todos os valores com "Sim" para 1 e todos os valores "Não" para 0.
+7- Na campo "Vencedor", altere todos os valores com "Sim" para 1 e todos os valores "Não" para 0. <br>
+
+```
+db.oscar.updateMany({winner: false}, {$set: {winner: 0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7841,
+  modifiedCount: 7841,
+  upsertedCount: 0
+}
+
+db.oscar.updateMany({winner: true}, {$set: {winner: 1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3217,
+  modifiedCount: 3217,
+  upsertedCount: 0
+}
+```
 
 8- Em qual edição do Oscar "Crash" concorreu ao Oscar?
 
