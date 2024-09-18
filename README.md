@@ -125,29 +125,9 @@ Foi para Janet Gaynor. Ano de 1927
 A 78.ª edição do Oscar
 
 ```
-> db.oscar.find({entity: "Crash", winner: 1}).sort({year: -1})
-< {
-  _id: ObjectId('66ea151c7099b8c447d228fe'),
-  category: 'FILM EDITING',
-  entity: 'Crash',
-  winner: 1,
-  year: 2005
-}
+> 
+< 
 
- {
-  _id: ObjectId('66ea151c7099b8c447d22913'),
-  category: 'BEST PICTURE',
-  entity: 'Crash',
-  winner: 1,
-  year: 2005
-}
- {
-  _id: ObjectId('66ea151c7099b8c447d22930'),
-  category: 'WRITING (Original Screenplay)',
-  entity: 'Crash',
-  winner: 1,
-  year: 2005
-}
 ```
 
 9- Bom... dê um Oscar para um filme que merece muito, mas não ganhou.
